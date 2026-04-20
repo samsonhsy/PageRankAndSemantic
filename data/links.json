@@ -1,0 +1,7 @@
+{
+  "pageA.html": ["pageB.html", "pageC.html", "pageD.html", "pageE.html"],
+  "pageB.html": ["pageA.html", "pageC.html", "pageE.html"],
+  "pageC.html": ["pageA.html", "pageB.html", "pageE.html"],
+  "pageD.html": ["pageA.html"],
+  "pageE.html": []
+}
