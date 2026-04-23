@@ -26,6 +26,7 @@ def extract_html_text(html_path):
 
 def get_html_embedding(cache_path=Path("./data/html_embedding.json")):
     # load cache first
+    cache_path = Path(cache_path)
     if cache_path.exists() and cache_path.stat().st_size > 0:
         try:
             with cache_path.open("r", encoding="utf-8") as f:
@@ -64,13 +65,18 @@ def cosine_similarity(vec_a, vec_b):
     
     return dot_product / (norm_a * norm_b)
 
-def rank_by_query(query, embedding_dict):
-    model = get_embeddings() 
-    query_embeddings = model.encode(query)  
-    print("query_embeddings", query_embeddings)
+def semantic_scores(query, cache_path=Path("./data/html_embedding.json"), embedding_dict=None):
+    if embedding_dict is None:
+        embedding_dict = get_html_embedding(cache_path)
+    model = get_embeddings()
+    query_embeddings = model.encode(query)
     similarity = {}
     for page, vector in embedding_dict.items():
-        similarity[page] = cosine_similarity(vector, query_embeddings)
+        similarity[page] = float(cosine_similarity(vector, query_embeddings))
+    return similarity
+
+def rank_by_query(query, embedding_dict):
+    similarity = semantic_scores(query, embedding_dict=embedding_dict)
     pages_sorted_desc = dict(sorted(similarity.items(), key=lambda item: item[1], reverse=True))
     print(pages_sorted_desc)
     return pages_sorted_desc
