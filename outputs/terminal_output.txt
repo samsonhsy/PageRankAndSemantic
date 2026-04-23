@@ -1,0 +1,94 @@
+❯ python3 src/experiment_runner.py
+=== Global PageRank ===
+Converged in 20 iterations, final diff=0.00000057
+PageRank ranking:
+  1. pageA.html   0.280682
+  2. pageE.html   0.230781
+  3. pageB.html   0.179829
+  4. pageC.html   0.179829
+  5. pageD.html   0.128878
+
+=== Query Experiments ===
+Loaded cached embeddings from html_embedding.json
+--- Query: machine learning basics ---
+Semantic ranking:
+  1. pageD.html   0.655012
+  2. pageA.html   0.595432
+  3. pageE.html   0.446697
+  4. pageB.html   0.359364
+  5. pageC.html   0.348028
+Hybrid ranking (alpha=0.5):
+  1. pageA.html   0.902959
+  2. pageD.html   0.500000
+  3. pageE.html   0.496348
+  4. pageB.html   0.186285
+  5. pageC.html   0.167820
+Metrics PageRank vs Semantic: Spearman=0.0000, Pearson=0.0292, Inversions=4
+
+
+Loaded cached embeddings from html_embedding.json
+--- Query: supervised vs unsupervised learning ---
+Semantic ranking:
+  1. pageD.html   0.548054
+  2. pageE.html   0.323452
+  3. pageA.html   0.287462
+  4. pageB.html   0.252896
+  5. pageC.html   0.164110
+Hybrid ranking (alpha=0.5):
+  1. pageA.html   0.660638
+  2. pageE.html   0.543148
+  3. pageD.html   0.500000
+  4. pageB.html   0.283444
+  5. pageC.html   0.167820
+Metrics PageRank vs Semantic: Spearman=-0.1000, Pearson=-0.4314, Inversions=5
+
+
+Loaded cached embeddings from html_embedding.json
+--- Query: computer science fundamentals ---
+Semantic ranking:
+  1. pageA.html   0.584992
+  2. pageC.html   0.471539
+  3. pageE.html   0.449740
+  4. pageB.html   0.410719
+  5. pageD.html   0.324843
+Hybrid ranking (alpha=0.5):
+  1. pageA.html   1.000000
+  2. pageE.html   0.575689
+  3. pageC.html   0.449766
+  4. pageB.html   0.332873
+  5. pageD.html   0.000000
+Metrics PageRank vs Semantic: Spearman=0.7000, Pearson=0.9211, Inversions=2
+
+
+Loaded cached embeddings from html_embedding.json
+--- Query: algorithms and data structures basics ---
+Semantic ranking:
+  1. pageB.html   0.707740
+  2. pageD.html   0.358465
+  3. pageA.html   0.350662
+  4. pageC.html   0.348286
+  5. pageE.html   0.211491
+Hybrid ranking (alpha=0.5):
+  1. pageB.html   0.667820
+  2. pageA.html   0.640223
+  3. pageE.html   0.335640
+  4. pageC.html   0.305650
+  5. pageD.html   0.148085
+Metrics PageRank vs Semantic: Spearman=-0.3000, Pearson=-0.2807, Inversions=6
+
+
+Loaded cached embeddings from html_embedding.json
+--- Query: applications of computer science ---
+Semantic ranking:
+  1. pageA.html   0.587936
+  2. pageE.html   0.569026
+  3. pageC.html   0.426297
+  4. pageB.html   0.375623
+  5. pageD.html   0.356873
+Hybrid ranking (alpha=0.5):
+  1. pageA.html   1.000000
+  2. pageE.html   0.794722
+  3. pageC.html   0.318047
+  4. pageB.html   0.208394
+  5. pageD.html   0.000000
+Metrics PageRank vs Semantic: Spearman=0.9000, Pearson=0.9337, Inversions=1
